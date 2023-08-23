@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.gymbroh.persistencia;
 
 import com.gymbroh.logica.Ejercicio;
@@ -12,6 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
+import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
@@ -23,6 +20,10 @@ public class EjercicioJpaController implements Serializable {
 
     public EjercicioJpaController(EntityManagerFactory emf) {
         this.emf = emf;
+    }
+    
+    public EjercicioJpaController() {
+        emf = Persistence.createEntityManagerFactory("persistencia");
     }
     private EntityManagerFactory emf = null;
 

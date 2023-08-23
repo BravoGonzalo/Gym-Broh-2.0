@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -18,7 +18,7 @@ public class Rutina implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idRutina;
     private String dia;
-    @OneToOne
+    @OneToMany
     private List<Ejercicio> rutina;
 
     public Rutina() {

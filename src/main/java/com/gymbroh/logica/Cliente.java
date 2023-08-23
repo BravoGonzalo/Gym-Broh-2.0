@@ -16,8 +16,8 @@ public class Cliente extends Persona {
     public Cliente() {
     }
 
-    public Cliente(Rutina rutina, int id, String nombre, String apellido, String tel, String email, String sexo, String contraseña, Date cumpleaños) {
-        super(id, nombre, apellido, tel, email, sexo, contraseña, cumpleaños);
+    public Cliente(Rutina rutina, int id, String nombre, String apellido, String tel, String email, String sexo, Date cumpleaños) {
+        super(id, nombre, apellido, tel, email, sexo, cumpleaños);
         this.rutina = rutina;
     }
 

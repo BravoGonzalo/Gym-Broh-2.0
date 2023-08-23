@@ -1,12 +1,16 @@
 package com.gymbroh.igu;
 
+import com.gymbroh.logica.Controladora;
+import com.gymbroh.logica.Entrenador;
+
 /**
  *
  * @author Gonzalo Bravo
  */
 public class Login extends javax.swing.JFrame {
-
+    Controladora control = null;
     public Login() {
+        control = new Controladora();
         initComponents();
     }
 
@@ -29,6 +33,9 @@ public class Login extends javax.swing.JFrame {
         GymBrohh = new javax.swing.JLabel();
         BotonIngresar = new javax.swing.JButton();
         BotonRegistrarse = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        BotonVolver = new javax.swing.JButton();
+        BotonVerRutina = new javax.swing.JButton();
         imagenDeFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -61,7 +68,7 @@ public class Login extends javax.swing.JFrame {
         Contraseña.setText("Contraseña:");
 
         TextContraseña.setBackground(new java.awt.Color(255, 255, 255, 128));
-        TextContraseña.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
+        TextContraseña.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         TextContraseña.setBorder(null);
 
         NoTienesCuenta.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
@@ -74,46 +81,98 @@ public class Login extends javax.swing.JFrame {
         GymBrohh.setForeground(new java.awt.Color(255, 255, 255));
         GymBrohh.setText("Gym Brohh");
 
+        BotonIngresar.setBackground(new java.awt.Color(255, 255, 255, 128));
         BotonIngresar.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         BotonIngresar.setText("Ingresar");
         BotonIngresar.setBorder(null);
+        BotonIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonIngresarActionPerformed(evt);
+            }
+        });
 
+        BotonRegistrarse.setBackground(new java.awt.Color(255, 255, 255, 128));
         BotonRegistrarse.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         BotonRegistrarse.setText("Registrarse");
         BotonRegistrarse.setBorder(null);
+        BotonRegistrarse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonRegistrarseActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Eres cliente?");
+
+        BotonVolver.setBackground(new java.awt.Color(255, 255, 255, 128));
+        BotonVolver.setFont(new java.awt.Font("Roboto", 3, 12)); // NOI18N
+        BotonVolver.setText("X");
+        BotonVolver.setBorder(null);
+        BotonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonVolverActionPerformed(evt);
+            }
+        });
+
+        BotonVerRutina.setBackground(new java.awt.Color(255, 255, 255, 128));
+        BotonVerRutina.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        BotonVerRutina.setText("Ve tu rutina");
+        BotonVerRutina.setBorder(null);
+        BotonVerRutina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonVerRutinaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout cInicioDeSesionLayout = new javax.swing.GroupLayout(cInicioDeSesion);
         cInicioDeSesion.setLayout(cInicioDeSesionLayout);
         cInicioDeSesionLayout.setHorizontalGroup(
             cInicioDeSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cInicioDeSesionLayout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(BotonRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(cInicioDeSesionLayout.createSequentialGroup()
                 .addGroup(cInicioDeSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(cInicioDeSesionLayout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addGroup(cInicioDeSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(InicioDeSesion)
-                            .addComponent(Contraseña)
-                            .addComponent(Email)
-                            .addComponent(S1)
-                            .addComponent(TextEmail)
-                            .addComponent(TextContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)
-                            .addComponent(S2)
-                            .addComponent(S3)))
-                    .addGroup(cInicioDeSesionLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(IconoPequeño, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(GymBrohh))
-                    .addGroup(cInicioDeSesionLayout.createSequentialGroup()
-                        .addGap(133, 133, 133)
-                        .addComponent(BotonIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(cInicioDeSesionLayout.createSequentialGroup()
-                        .addGap(145, 145, 145)
-                        .addComponent(NoTienesCuenta))
-                    .addGroup(cInicioDeSesionLayout.createSequentialGroup()
-                        .addGap(131, 131, 131)
-                        .addComponent(BotonRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(70, Short.MAX_VALUE))
+                        .addGroup(cInicioDeSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(cInicioDeSesionLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(IconoPequeño, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(GymBrohh))
+                            .addGroup(cInicioDeSesionLayout.createSequentialGroup()
+                                .addGap(133, 133, 133)
+                                .addComponent(BotonIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(cInicioDeSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cInicioDeSesionLayout.createSequentialGroup()
+                                    .addGap(51, 51, 51)
+                                    .addComponent(NoTienesCuenta)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
+                                    .addComponent(jLabel1)
+                                    .addGap(34, 34, 34))
+                                .addGroup(cInicioDeSesionLayout.createSequentialGroup()
+                                    .addGap(17, 17, 17)
+                                    .addGroup(cInicioDeSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(InicioDeSesion)
+                                        .addComponent(Contraseña)
+                                        .addComponent(Email)
+                                        .addComponent(S1)
+                                        .addComponent(TextEmail)
+                                        .addComponent(TextContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)
+                                        .addComponent(S2)
+                                        .addComponent(S3)))))
+                        .addGap(0, 64, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cInicioDeSesionLayout.createSequentialGroup()
+                        .addContainerGap(409, Short.MAX_VALUE)
+                        .addComponent(BotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+            .addGroup(cInicioDeSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cInicioDeSesionLayout.createSequentialGroup()
+                    .addContainerGap(257, Short.MAX_VALUE)
+                    .addComponent(BotonVerRutina, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(68, 68, 68)))
         );
         cInicioDeSesionLayout.setVerticalGroup(
             cInicioDeSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,7 +182,9 @@ public class Login extends javax.swing.JFrame {
                         .addGap(66, 66, 66)
                         .addComponent(IconoPequeño, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(cInicioDeSesionLayout.createSequentialGroup()
-                        .addGap(94, 94, 94)
+                        .addContainerGap()
+                        .addComponent(BotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(53, 53, 53)
                         .addComponent(GymBrohh)))
                 .addGap(70, 70, 70)
                 .addComponent(InicioDeSesion)
@@ -144,10 +205,17 @@ public class Login extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(S3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(NoTienesCuenta)
-                .addGap(18, 18, 18)
+                .addGroup(cInicioDeSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(NoTienesCuenta)
+                    .addComponent(jLabel1))
+                .addGap(27, 27, 27)
                 .addComponent(BotonRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
+            .addGroup(cInicioDeSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cInicioDeSesionLayout.createSequentialGroup()
+                    .addContainerGap(728, Short.MAX_VALUE)
+                    .addComponent(BotonVerRutina, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(31, 31, 31)))
         );
 
         bg.add(cInicioDeSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 460, 830));
@@ -174,10 +242,40 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TextEmailActionPerformed
 
+    private void BotonRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarseActionPerformed
+
+        Registrarse menu = new Registrarse();
+        menu.setVisible(true);
+        menu.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_BotonRegistrarseActionPerformed
+
+    private void BotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVolverActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_BotonVolverActionPerformed
+
+    private void BotonVerRutinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVerRutinaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonVerRutinaActionPerformed
+
+    private void BotonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonIngresarActionPerformed
+        String email = TextEmail.getText();
+        char[] var = TextContraseña.getPassword();
+        String contra = new String (var);
+        control.verificarEntrenador(email, contra);
+    }//GEN-LAST:event_BotonIngresarActionPerformed
+
+    public void mostrarVentana(Entrenador entrenador){
+        Menu menu = new Menu();
+        menu.setVisible(true);
+        menu.setLocationRelativeTo(null);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonIngresar;
     private javax.swing.JButton BotonRegistrarse;
+    private javax.swing.JButton BotonVerRutina;
+    private javax.swing.JButton BotonVolver;
     private javax.swing.JLabel Contraseña;
     private javax.swing.JLabel Email;
     private javax.swing.JLabel GymBrohh;
@@ -192,5 +290,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel bg;
     private javax.swing.JPanel cInicioDeSesion;
     private javax.swing.JLabel imagenDeFondo;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
