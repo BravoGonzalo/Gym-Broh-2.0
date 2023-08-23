@@ -10,14 +10,6 @@ public class Menu extends javax.swing.JFrame {
 
     public Menu() {
         initComponents();
-        RegistrarCliente r = new RegistrarCliente();
-        r.setSize(720, 1000);
-        r.setLocation(0,0);
-        
-        bgDefaultTable.removeAll();
-        bgDefaultTable.add(r, BorderLayout.CENTER);
-        bgDefaultTable.revalidate();
-        bgDefaultTable.repaint();
     }
 
     @SuppressWarnings("unchecked")
@@ -47,6 +39,11 @@ public class Menu extends javax.swing.JFrame {
         BotonRegistrarCliente.setBorder(null);
         BotonRegistrarCliente.setMaximumSize(new java.awt.Dimension(72, 23));
         BotonRegistrarCliente.setMinimumSize(new java.awt.Dimension(72, 23));
+        BotonRegistrarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonRegistrarClienteActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255, 128));
         jButton3.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
@@ -121,12 +118,23 @@ public class Menu extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void BotonRegistrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarClienteActionPerformed
+        CargarCliente r = new CargarCliente();
+        r.setSize(1000, 710);
+        r.setLocation(0, 0);
+
+        bgDefaultTable.removeAll();
+        bgDefaultTable.add(r, BorderLayout.CENTER);
+        bgDefaultTable.revalidate();
+        bgDefaultTable.repaint();
+    }//GEN-LAST:event_BotonRegistrarClienteActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonRegistrarCliente;
     private javax.swing.JLabel Fondo;
     private javax.swing.JPanel PanelBotones;
     private javax.swing.JPanel bg;
-    private javax.swing.JPanel bgDefaultTable;
+    public static javax.swing.JPanel bgDefaultTable;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     // End of variables declaration//GEN-END:variables

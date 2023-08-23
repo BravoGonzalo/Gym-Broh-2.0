@@ -1,17 +1,20 @@
-
 package com.gymbroh.igu;
 
-import com.gymbroh.logica.Controladora;
 import java.util.Date;
+
 import javax.swing.JOptionPane;
+
+import com.gymbroh.logica.Controladora;
 
 /**
  *
  * @author Gonzalo Bravo
  */
-public class RegistrarCliente extends javax.swing.JFrame {
+public class CargarCliente extends javax.swing.JPanel {
+
     Controladora control = null;
-    public RegistrarCliente() {
+
+    public CargarCliente() {
         control = new Controladora();
         initComponents();
     }
@@ -42,10 +45,12 @@ public class RegistrarCliente extends javax.swing.JFrame {
         Sexo = new javax.swing.JLabel();
         Fondo = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1000, 710));
+        setMinimumSize(new java.awt.Dimension(1000, 710));
+        setPreferredSize(new java.awt.Dimension(1000, 710));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         bg.setMaximumSize(new java.awt.Dimension(1000, 710));
-        bg.setMinimumSize(new java.awt.Dimension(1000, 710));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cInicioDeSesion.setBackground(new java.awt.Color(0, 0, 0,80));
@@ -138,16 +143,14 @@ public class RegistrarCliente extends javax.swing.JFrame {
                     .addGroup(cInicioDeSesionLayout.createSequentialGroup()
                         .addGroup(cInicioDeSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(cInicioDeSesionLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGap(0, 32, Short.MAX_VALUE)
                                 .addComponent(FechaNacimiento))
-                            .addGroup(cInicioDeSesionLayout.createSequentialGroup()
-                                .addComponent(DateNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)))
+                            .addComponent(DateNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(cInicioDeSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(cInicioDeSesionLayout.createSequentialGroup()
                                 .addGap(57, 57, 57)
                                 .addComponent(ComboSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(43, Short.MAX_VALUE))
+                                .addContainerGap(32, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cInicioDeSesionLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(Sexo)
@@ -214,8 +217,8 @@ public class RegistrarCliente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(cInicioDeSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(ComboSexo)
-                    .addComponent(DateNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                    .addComponent(DateNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addComponent(Tel, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TextCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -238,18 +241,7 @@ public class RegistrarCliente extends javax.swing.JFrame {
         Fondo.setPreferredSize(new java.awt.Dimension(1000, 710));
         bg.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 710));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        pack();
+        add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarseActionPerformed
@@ -259,16 +251,18 @@ public class RegistrarCliente extends javax.swing.JFrame {
         String sexo = (String) ComboSexo.getSelectedItem();
         String tel = TextCelular.getText();
         String email = TextEmail.getText();
-        if (nombre.isEmpty() || apellido.isEmpty() || fecha == null || sexo.equals("*") || tel.isEmpty() ||email.isEmpty()) {
+        if (nombre.isEmpty() || apellido.isEmpty() || fecha == null || sexo.equals("*") || tel.isEmpty() || email.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Campo/s vacio/s");
-        }else{
+        } else {
             control.guardarCliente(nombre, apellido, fecha, sexo, tel, email);
+            JOptionPane.showMessageDialog(null, "Cliente cargado con exito.");
         }
     }//GEN-LAST:event_BotonRegistrarseActionPerformed
 
     private void TextCelularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextCelularActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TextCelularActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Apellido;

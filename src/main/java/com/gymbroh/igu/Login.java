@@ -269,6 +269,7 @@ public class Login extends javax.swing.JFrame {
         Menu menu = new Menu();
         menu.setVisible(true);
         menu.setLocationRelativeTo(null);
+        this.dispose();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
