@@ -11,11 +11,11 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Gonzalo Bravo
  */
-public class VisualizarClientes extends javax.swing.JPanel {
+public class Rutinas extends javax.swing.JPanel {
 
     private Controladora control = null;
 
-    public VisualizarClientes() {
+    public Rutinas() {
         control = new Controladora();
         initComponents();
         cargarTabla();
@@ -26,13 +26,13 @@ public class VisualizarClientes extends javax.swing.JPanel {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        cVerClientes = new javax.swing.JPanel();
+        cRutinas = new javax.swing.JPanel();
         IconoPequeño = new javax.swing.JLabel();
         S1 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
         Tabla = new javax.swing.JTable();
-        BotonEditar = new javax.swing.JButton();
-        BotonBorrar = new javax.swing.JButton();
+        BotonCrear = new javax.swing.JButton();
+        BotonEliminar = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(1000, 710));
@@ -42,9 +42,9 @@ public class VisualizarClientes extends javax.swing.JPanel {
         bg.setMaximumSize(new java.awt.Dimension(1000, 710));
         bg.setMinimumSize(new java.awt.Dimension(1000, 710));
 
-        cVerClientes.setBackground(new java.awt.Color(0, 0, 0,80));
-        cVerClientes.setMaximumSize(new java.awt.Dimension(1000, 710));
-        cVerClientes.setMinimumSize(new java.awt.Dimension(1000, 710));
+        cRutinas.setBackground(new java.awt.Color(0, 0, 0,80));
+        cRutinas.setMaximumSize(new java.awt.Dimension(1000, 710));
+        cRutinas.setMinimumSize(new java.awt.Dimension(1000, 710));
 
         IconoPequeño.setIcon(new javax.swing.ImageIcon("E:\\Gym_Broh\\src\\image\\logoPequeño.png")); // NOI18N
 
@@ -61,58 +61,58 @@ public class VisualizarClientes extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(Tabla);
 
-        BotonEditar.setBackground(new java.awt.Color(255, 255, 255, 128));
-        BotonEditar.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
-        BotonEditar.setText("Editar");
-        BotonEditar.setBorder(null);
-        BotonEditar.addActionListener(new java.awt.event.ActionListener() {
+        BotonCrear.setBackground(new java.awt.Color(255, 255, 255, 128));
+        BotonCrear.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
+        BotonCrear.setText("Crear");
+        BotonCrear.setBorder(null);
+        BotonCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonEditarActionPerformed(evt);
+                BotonCrearActionPerformed(evt);
             }
         });
 
-        BotonBorrar.setBackground(new java.awt.Color(255, 255, 255, 128));
-        BotonBorrar.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
-        BotonBorrar.setText("Borrar");
-        BotonBorrar.setBorder(null);
-        BotonBorrar.addActionListener(new java.awt.event.ActionListener() {
+        BotonEliminar.setBackground(new java.awt.Color(255, 255, 255, 128));
+        BotonEliminar.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
+        BotonEliminar.setText("Eliminar");
+        BotonEliminar.setBorder(null);
+        BotonEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonBorrarActionPerformed(evt);
+                BotonEliminarActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout cVerClientesLayout = new javax.swing.GroupLayout(cVerClientes);
-        cVerClientes.setLayout(cVerClientesLayout);
-        cVerClientesLayout.setHorizontalGroup(
-            cVerClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cVerClientesLayout.createSequentialGroup()
-                .addGroup(cVerClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cVerClientesLayout.createSequentialGroup()
+        javax.swing.GroupLayout cRutinasLayout = new javax.swing.GroupLayout(cRutinas);
+        cRutinas.setLayout(cRutinasLayout);
+        cRutinasLayout.setHorizontalGroup(
+            cRutinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cRutinasLayout.createSequentialGroup()
+                .addGroup(cRutinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cRutinasLayout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addComponent(S1, javax.swing.GroupLayout.PREFERRED_SIZE, 945, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(cVerClientesLayout.createSequentialGroup()
+                    .addGroup(cRutinasLayout.createSequentialGroup()
                         .addGap(257, 257, 257)
-                        .addComponent(BotonEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BotonCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(71, 71, 71)
                         .addComponent(IconoPequeño, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(85, 85, 85)
-                        .addComponent(BotonBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(BotonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(31, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cVerClientesLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cRutinasLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 839, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(75, 75, 75))
         );
-        cVerClientesLayout.setVerticalGroup(
-            cVerClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cVerClientesLayout.createSequentialGroup()
+        cRutinasLayout.setVerticalGroup(
+            cRutinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cRutinasLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(cVerClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cVerClientesLayout.createSequentialGroup()
+                .addGroup(cRutinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cRutinasLayout.createSequentialGroup()
                         .addComponent(IconoPequeño, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(BotonEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BotonBorrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(BotonCrear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotonEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(S1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -129,12 +129,12 @@ public class VisualizarClientes extends javax.swing.JPanel {
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cVerClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(cRutinas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(Fondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cVerClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(cRutinas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(Fondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
@@ -150,12 +150,12 @@ public class VisualizarClientes extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BotonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEditarActionPerformed
+    private void BotonCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCrearActionPerformed
         if (Tabla.getRowCount() > 0) {
             if (Tabla.getSelectedRow() != -1) {
                 int id = Integer.parseInt(String.valueOf(Tabla.getValueAt(Tabla.getSelectedRow(), 0)));
 
-                EditarCliente menu = new EditarCliente(id);
+                CrearRutina menu = new CrearRutina(id);
                 menu.setVisible(true);
                 menu.setLocationRelativeTo(null);
                 this.disable();
@@ -165,9 +165,9 @@ public class VisualizarClientes extends javax.swing.JPanel {
         } else {
             mostrarMensaje("No hay nada para eliminar en la tabla", "Error", "error al eliminar");
         }
-    }//GEN-LAST:event_BotonEditarActionPerformed
+    }//GEN-LAST:event_BotonCrearActionPerformed
 
-    private void BotonBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBorrarActionPerformed
+    private void BotonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEliminarActionPerformed
         if (Tabla.getRowCount() > 0) {
             if (Tabla.getSelectedRow() != -1) {
                 int id = Integer.parseInt(String.valueOf(Tabla.getValueAt(Tabla.getSelectedRow(), 0)));
@@ -181,7 +181,7 @@ public class VisualizarClientes extends javax.swing.JPanel {
         } else {
             mostrarMensaje("No hay nada para eliminar en la tabla", "Error", "error al eliminar");
         }
-    }//GEN-LAST:event_BotonBorrarActionPerformed
+    }//GEN-LAST:event_BotonEliminarActionPerformed
 
     public void mostrarMensaje(String mensaje, String tipo, String titulo) {
         JOptionPane mensajes = new JOptionPane(mensaje);
@@ -195,14 +195,14 @@ public class VisualizarClientes extends javax.swing.JPanel {
         dialog.setVisible(true);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotonBorrar;
-    private javax.swing.JButton BotonEditar;
+    private javax.swing.JButton BotonCrear;
+    private javax.swing.JButton BotonEliminar;
     private javax.swing.JLabel Fondo;
     private javax.swing.JLabel IconoPequeño;
     private javax.swing.JSeparator S1;
     private javax.swing.JTable Tabla;
     private javax.swing.JPanel bg;
-    private javax.swing.JPanel cVerClientes;
+    private javax.swing.JPanel cRutinas;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 

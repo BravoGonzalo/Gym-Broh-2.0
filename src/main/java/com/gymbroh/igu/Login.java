@@ -8,7 +8,7 @@ import com.gymbroh.logica.Entrenador;
  * @author Gonzalo Bravo
  */
 public class Login extends javax.swing.JFrame {
-    Controladora control = null;
+    private Controladora control = null;
     public Login() {
         control = new Controladora();
         initComponents();
@@ -41,6 +41,8 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(897, 500));
         setMinimumSize(new java.awt.Dimension(897, 500));
+        setUndecorated(true);
+        setResizable(false);
 
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -163,14 +165,14 @@ public class Login extends javax.swing.JFrame {
                                         .addComponent(TextContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)
                                         .addComponent(S2)
                                         .addComponent(S3)))))
-                        .addGap(0, 64, Short.MAX_VALUE))
+                        .addGap(0, 54, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cInicioDeSesionLayout.createSequentialGroup()
-                        .addContainerGap(409, Short.MAX_VALUE)
+                        .addContainerGap(399, Short.MAX_VALUE)
                         .addComponent(BotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addGroup(cInicioDeSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cInicioDeSesionLayout.createSequentialGroup()
-                    .addContainerGap(257, Short.MAX_VALUE)
+                    .addContainerGap(247, Short.MAX_VALUE)
                     .addComponent(BotonVerRutina, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(68, 68, 68)))
         );
@@ -218,7 +220,7 @@ public class Login extends javax.swing.JFrame {
                     .addGap(31, 31, 31)))
         );
 
-        bg.add(cInicioDeSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 460, 830));
+        bg.add(cInicioDeSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 450, 830));
 
         imagenDeFondo.setIcon(new javax.swing.ImageIcon("E:\\Gym_Broh\\src\\image\\todojunto2.png")); // NOI18N
         bg.add(imagenDeFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 830));
@@ -255,14 +257,17 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonVolverActionPerformed
 
     private void BotonVerRutinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVerRutinaActionPerformed
-        // TODO add your handling code here:
+        VisualizarRutinas menu = new VisualizarRutinas();
+        menu.setVisible(true);
+        menu.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_BotonVerRutinaActionPerformed
 
     private void BotonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonIngresarActionPerformed
         String email = TextEmail.getText();
         char[] var = TextContraseña.getPassword();
         String contra = new String (var);
-        control.verificarEntrenador(email, contra);
+        control.verificarEntrenador(email, contra, this);
     }//GEN-LAST:event_BotonIngresarActionPerformed
 
     public void mostrarVentana(Entrenador entrenador){
@@ -272,6 +277,9 @@ public class Login extends javax.swing.JFrame {
         this.dispose();
     }
 
+    public void disposeVentana(){
+        this.dispose();
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonIngresar;
     private javax.swing.JButton BotonRegistrarse;

@@ -25,9 +25,13 @@ public class Menu extends javax.swing.JFrame {
         BotonRegistrarCliente = new javax.swing.JButton();
         BotonVisualizarClientes = new javax.swing.JButton();
         BotonRutinas = new javax.swing.JButton();
+        BotonCerrar = new javax.swing.JButton();
+        BotonVolver1 = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -70,7 +74,7 @@ public class Menu extends javax.swing.JFrame {
 
         BotonVisualizarClientes.setBackground(new java.awt.Color(255, 255, 255, 128));
         BotonVisualizarClientes.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
-        BotonVisualizarClientes.setText("Visualizar Clientes");
+        BotonVisualizarClientes.setText("Clientes");
         BotonVisualizarClientes.setBorder(null);
         BotonVisualizarClientes.setMaximumSize(new java.awt.Dimension(72, 23));
         BotonVisualizarClientes.setMinimumSize(new java.awt.Dimension(72, 23));
@@ -84,6 +88,31 @@ public class Menu extends javax.swing.JFrame {
         BotonRutinas.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         BotonRutinas.setText("Rutinas");
         BotonRutinas.setBorder(null);
+        BotonRutinas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonRutinasActionPerformed(evt);
+            }
+        });
+
+        BotonCerrar.setBackground(new java.awt.Color(255, 255, 255, 128));
+        BotonCerrar.setFont(new java.awt.Font("Roboto", 3, 12)); // NOI18N
+        BotonCerrar.setText("X");
+        BotonCerrar.setBorder(null);
+        BotonCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonCerrarActionPerformed(evt);
+            }
+        });
+
+        BotonVolver1.setBackground(new java.awt.Color(255, 255, 255, 128));
+        BotonVolver1.setFont(new java.awt.Font("Roboto", 3, 12)); // NOI18N
+        BotonVolver1.setText("<");
+        BotonVolver1.setBorder(null);
+        BotonVolver1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonVolver1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelBotonesLayout = new javax.swing.GroupLayout(PanelBotones);
         PanelBotones.setLayout(PanelBotonesLayout);
@@ -96,16 +125,25 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(BotonVisualizarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(121, 121, 121)
                 .addComponent(BotonRutinas, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(232, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
+                .addComponent(BotonVolver1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(BotonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         PanelBotonesLayout.setVerticalGroup(
             PanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBotonesLayout.createSequentialGroup()
+            .addGroup(PanelBotonesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(PanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(BotonRegistrarCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BotonVisualizarClientes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
-                    .addComponent(BotonRutinas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(PanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelBotonesLayout.createSequentialGroup()
+                        .addGroup(PanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BotonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BotonVolver1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(BotonRegistrarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotonVisualizarClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+                    .addComponent(BotonRutinas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -135,7 +173,7 @@ public class Menu extends javax.swing.JFrame {
         CargarCliente r = new CargarCliente();
         r.setSize(1000, 710);
         r.setLocation(0, 0);
-
+        visual.cargarTabla();
         bgDefaultTable.removeAll();
         bgDefaultTable.add(r, BorderLayout.CENTER);
         bgDefaultTable.revalidate();
@@ -145,7 +183,7 @@ public class Menu extends javax.swing.JFrame {
     private void BotonVisualizarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVisualizarClientesActionPerformed
         visual.setSize(1000, 710);
         visual.setLocation(0, 0);
-
+        visual.cargarTabla();
         bgDefaultTable.removeAll();
         bgDefaultTable.add(visual, BorderLayout.CENTER);
         bgDefaultTable.revalidate();
@@ -156,10 +194,35 @@ public class Menu extends javax.swing.JFrame {
         visual.cargarTabla();
     }//GEN-LAST:event_formWindowOpened
 
+    private void BotonCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCerrarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_BotonCerrarActionPerformed
+
+    private void BotonRutinasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRutinasActionPerformed
+        Rutinas menu = new Rutinas();
+        menu.setSize(1000, 710);
+        menu.setLocation(0, 0);
+        visual.cargarTabla();
+        bgDefaultTable.removeAll();
+        bgDefaultTable.add(menu, BorderLayout.CENTER);
+        bgDefaultTable.revalidate();
+        bgDefaultTable.repaint();
+    }//GEN-LAST:event_BotonRutinasActionPerformed
+
+    private void BotonVolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVolver1ActionPerformed
+        Login menu = new Login();
+        menu.setVisible(true);
+        menu.setLocationRelativeTo(null);
+        
+        this.dispose();
+    }//GEN-LAST:event_BotonVolver1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonCerrar;
     private javax.swing.JButton BotonRegistrarCliente;
     private javax.swing.JButton BotonRutinas;
     private javax.swing.JButton BotonVisualizarClientes;
+    private javax.swing.JButton BotonVolver1;
     private javax.swing.JLabel Fondo;
     private javax.swing.JPanel PanelBotones;
     private javax.swing.JPanel bg;
