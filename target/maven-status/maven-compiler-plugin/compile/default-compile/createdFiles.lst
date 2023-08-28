@@ -1,6 +1,8 @@
+com\gymbroh\igu\VisualizarClientes.class
 com\gymbroh\igu\Login$3.class
 com\gymbroh\persistencia\RutinaJpaController.class
 com\gymbroh\logica\Persona.class
+com\gymbroh\igu\VisualizarClientes$1.class
 com\gymbroh\logica\Cliente.class
 com\gymbroh\persistencia\ClienteJpaController.class
 com\gymbroh\igu\Menu$1.class
@@ -10,6 +12,7 @@ com\gymbroh\igu\Login.class
 com\gymbroh\igu\Login$5.class
 com\gymbroh\igu\Menu.class
 com\gymbroh\igu\CargarCliente$2.class
+com\gymbroh\igu\Menu$3.class
 com\gymbroh\logica\Ejercicio.class
 com\gymbroh\igu\Registrarse.class
 com\gymbroh\igu\Registrarse$4.class
@@ -18,6 +21,7 @@ com\gymbroh\persistencia\PersonaJpaController.class
 com\gymbroh\logica\Ejercicio_.class
 com\gymbroh\logica\Rutina_.class
 com\gymbroh\logica\Cliente_.class
+com\gymbroh\igu\Menu$2.class
 com\gymbroh\logica\Entrenador.class
 com\gymbroh\igu\Registrarse$2.class
 com\gymbroh\logica\Controladora.class

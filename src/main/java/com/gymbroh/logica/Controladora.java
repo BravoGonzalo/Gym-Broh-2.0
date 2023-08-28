@@ -5,7 +5,6 @@ import com.gymbroh.persistencia.ClienteJpaController;
 import com.gymbroh.persistencia.EjercicioJpaController;
 import com.gymbroh.persistencia.EntrenadorJpaController;
 import com.gymbroh.persistencia.RutinaJpaController;
-import java.awt.HeadlessException;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -58,8 +57,12 @@ public class Controladora {
         Cliente cliente = new Cliente(null, 0, nombre, apellido, tel, email, sexo, fecha);
         try{
             clienteJpa.create(cliente);
-        }catch(Exception e){
+        }catch(NullPointerException e){
             JOptionPane.showMessageDialog(null, "ERROR");
         }
+    }
+
+    public List<Cliente> traerClientes() {
+        return clienteJpa.findClienteEntities();
     }
 }
