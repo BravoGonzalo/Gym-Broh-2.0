@@ -8,7 +8,10 @@ import java.awt.BorderLayout;
  */
 public class Menu extends javax.swing.JFrame {
 
+    private VisualizarClientes visual = null;
+
     public Menu() {
+        visual = new VisualizarClientes();
         initComponents();
     }
 
@@ -132,7 +135,7 @@ public class Menu extends javax.swing.JFrame {
         CargarCliente r = new CargarCliente();
         r.setSize(1000, 710);
         r.setLocation(0, 0);
-        
+
         bgDefaultTable.removeAll();
         bgDefaultTable.add(r, BorderLayout.CENTER);
         bgDefaultTable.revalidate();
@@ -140,19 +143,17 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonRegistrarClienteActionPerformed
 
     private void BotonVisualizarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVisualizarClientesActionPerformed
-        VisualizarClientes r = new VisualizarClientes();
-        r.setSize(1000, 710);
-        r.setLocation(0, 0);
-        
+        visual.setSize(1000, 710);
+        visual.setLocation(0, 0);
+
         bgDefaultTable.removeAll();
-        bgDefaultTable.add(r, BorderLayout.CENTER);
+        bgDefaultTable.add(visual, BorderLayout.CENTER);
         bgDefaultTable.revalidate();
         bgDefaultTable.repaint();
     }//GEN-LAST:event_BotonVisualizarClientesActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        VisualizarClientes r = new VisualizarClientes();
-        r.cargarTabla();
+        visual.cargarTabla();
     }//GEN-LAST:event_formWindowOpened
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -6,7 +6,9 @@ E:\Gym_Broh\src\main\java\com\gymbroh\igu\Menu.java
 E:\Gym_Broh\src\main\java\com\gymbroh\igu\Registrarse.java
 E:\Gym_Broh\src\main\java\com\gymbroh\persistencia\PersonaJpaController.java
 E:\Gym_Broh\src\main\java\com\gymbroh\persistencia\exceptions\PreexistingEntityException.java
+E:\Gym_Broh\src\main\java\com\gymbroh\igu\VisualizarClientes.java
 E:\Gym_Broh\src\main\java\com\gymbroh\logica\Cliente.java
+E:\Gym_Broh\src\main\java\com\gymbroh\igu\CargarCliente.java
 E:\Gym_Broh\src\main\java\com\gymbroh\persistencia\exceptions\IllegalOrphanException.java
 E:\Gym_Broh\src\main\java\com\gymbroh\persistencia\EntrenadorJpaController.java
 E:\Gym_Broh\src\main\java\com\gymbroh\logica\Ejercicio.java
