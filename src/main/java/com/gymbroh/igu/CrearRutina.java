@@ -50,12 +50,15 @@ public class CrearRutina extends javax.swing.JFrame {
         BotonEjercicio = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         BotonRutina = new javax.swing.JButton();
+        BotonCerrar = new javax.swing.JButton();
         imagenDeFondo = new javax.swing.JLabel();
 
         jButton2.setText("jButton2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(897, 500));
+        setUndecorated(true);
+        setResizable(false);
 
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -73,6 +76,7 @@ public class CrearRutina extends javax.swing.JFrame {
 
         BotonVolver.setBackground(new java.awt.Color(255, 255, 255, 128));
         BotonVolver.setFont(new java.awt.Font("Roboto", 3, 12)); // NOI18N
+        BotonVolver.setForeground(new java.awt.Color(255, 255, 255));
         BotonVolver.setText("<");
         BotonVolver.setBorder(null);
         BotonVolver.addActionListener(new java.awt.event.ActionListener() {
@@ -105,33 +109,51 @@ public class CrearRutina extends javax.swing.JFrame {
         Series.setForeground(new java.awt.Color(255, 255, 255));
         Series.setText("Series:");
 
+        ComboRepes.setBackground(new java.awt.Color(255, 255, 255, 128));
         ComboRepes.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         ComboRepes.setForeground(new java.awt.Color(0, 0, 0));
         ComboRepes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "*", "4", "6", "8", "10", "12", "15", "Al fallo" }));
         ComboRepes.setBorder(null);
 
+        ComboSeries.setBackground(new java.awt.Color(255, 255, 255, 128));
         ComboSeries.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         ComboSeries.setForeground(new java.awt.Color(0, 0, 0));
         ComboSeries.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "*", "2", "3", "4", "5" }));
         ComboSeries.setBorder(null);
 
+        BotonEjercicio.setBackground(new java.awt.Color(255, 255, 255, 128));
         BotonEjercicio.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         BotonEjercicio.setForeground(new java.awt.Color(255, 255, 255));
         BotonEjercicio.setText("Agregar Ejercicio");
         BotonEjercicio.setBorder(null);
+        BotonEjercicio.setRolloverEnabled(false);
         BotonEjercicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonEjercicioActionPerformed(evt);
             }
         });
 
+        BotonRutina.setBackground(new java.awt.Color(255, 255, 255, 128));
         BotonRutina.setFont(new java.awt.Font("Roboto", 3, 24)); // NOI18N
         BotonRutina.setForeground(new java.awt.Color(255, 255, 255));
         BotonRutina.setText("Guardar Rutina");
         BotonRutina.setBorder(null);
+        BotonRutina.setRolloverEnabled(false);
         BotonRutina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonRutinaActionPerformed(evt);
+            }
+        });
+
+        BotonCerrar.setBackground(new java.awt.Color(255, 255, 255, 128));
+        BotonCerrar.setFont(new java.awt.Font("Roboto", 3, 12)); // NOI18N
+        BotonCerrar.setForeground(new java.awt.Color(255, 255, 255));
+        BotonCerrar.setText("X");
+        BotonCerrar.setBorder(null);
+        BotonCerrar.setRolloverEnabled(false);
+        BotonCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonCerrarActionPerformed(evt);
             }
         });
 
@@ -145,16 +167,19 @@ public class CrearRutina extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(cCargarRutinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(cCargarRutinaLayout.createSequentialGroup()
+                                .addGroup(cCargarRutinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(CompleteLosCamposParaEditar)
+                                    .addComponent(S1, javax.swing.GroupLayout.PREFERRED_SIZE, 543, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 21, Short.MAX_VALUE))
+                            .addGroup(cCargarRutinaLayout.createSequentialGroup()
                                 .addComponent(IconoPequeño, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(GymBrohh)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(BotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(cCargarRutinaLayout.createSequentialGroup()
-                                .addGroup(cCargarRutinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(CompleteLosCamposParaEditar)
-                                    .addComponent(S1, javax.swing.GroupLayout.PREFERRED_SIZE, 543, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 15, Short.MAX_VALUE))))
+                                .addComponent(BotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(BotonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(3, 3, 3))))
                     .addGroup(cCargarRutinaLayout.createSequentialGroup()
                         .addGroup(cCargarRutinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(cCargarRutinaLayout.createSequentialGroup()
@@ -206,7 +231,9 @@ public class CrearRutina extends javax.swing.JFrame {
                         .addComponent(GymBrohh))
                     .addGroup(cCargarRutinaLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(BotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(cCargarRutinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BotonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CompleteLosCamposParaEditar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -279,10 +306,15 @@ public class CrearRutina extends javax.swing.JFrame {
         control.guardarRutina(cliente, rutina, dia);
     }//GEN-LAST:event_BotonRutinaActionPerformed
 
+    private void BotonCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCerrarActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_BotonCerrarActionPerformed
+
     private void editarCliente(int id) {
         this.cliente = control.traerCliente(id);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonCerrar;
     private javax.swing.JButton BotonEjercicio;
     private javax.swing.JButton BotonRutina;
     private javax.swing.JButton BotonVolver;

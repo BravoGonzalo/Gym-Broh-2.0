@@ -63,8 +63,10 @@ public class Rutinas extends javax.swing.JPanel {
 
         BotonCrear.setBackground(new java.awt.Color(255, 255, 255, 128));
         BotonCrear.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
+        BotonCrear.setForeground(new java.awt.Color(255, 255, 255));
         BotonCrear.setText("Crear");
         BotonCrear.setBorder(null);
+        BotonCrear.setRolloverEnabled(false);
         BotonCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonCrearActionPerformed(evt);
@@ -73,8 +75,10 @@ public class Rutinas extends javax.swing.JPanel {
 
         BotonEliminar.setBackground(new java.awt.Color(255, 255, 255, 128));
         BotonEliminar.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
+        BotonEliminar.setForeground(new java.awt.Color(255, 255, 255));
         BotonEliminar.setText("Eliminar");
         BotonEliminar.setBorder(null);
+        BotonEliminar.setRolloverEnabled(false);
         BotonEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonEliminarActionPerformed(evt);

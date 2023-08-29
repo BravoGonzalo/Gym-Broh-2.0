@@ -62,10 +62,12 @@ public class Menu extends javax.swing.JFrame {
 
         BotonRegistrarCliente.setBackground(new java.awt.Color(255, 255, 255, 128));
         BotonRegistrarCliente.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
+        BotonRegistrarCliente.setForeground(new java.awt.Color(255, 255, 255));
         BotonRegistrarCliente.setText("Registrar Cliente");
         BotonRegistrarCliente.setBorder(null);
         BotonRegistrarCliente.setMaximumSize(new java.awt.Dimension(72, 23));
         BotonRegistrarCliente.setMinimumSize(new java.awt.Dimension(72, 23));
+        BotonRegistrarCliente.setRolloverEnabled(false);
         BotonRegistrarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonRegistrarClienteActionPerformed(evt);
@@ -74,10 +76,12 @@ public class Menu extends javax.swing.JFrame {
 
         BotonVisualizarClientes.setBackground(new java.awt.Color(255, 255, 255, 128));
         BotonVisualizarClientes.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
+        BotonVisualizarClientes.setForeground(new java.awt.Color(255, 255, 255));
         BotonVisualizarClientes.setText("Clientes");
         BotonVisualizarClientes.setBorder(null);
         BotonVisualizarClientes.setMaximumSize(new java.awt.Dimension(72, 23));
         BotonVisualizarClientes.setMinimumSize(new java.awt.Dimension(72, 23));
+        BotonVisualizarClientes.setRolloverEnabled(false);
         BotonVisualizarClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonVisualizarClientesActionPerformed(evt);
@@ -86,8 +90,10 @@ public class Menu extends javax.swing.JFrame {
 
         BotonRutinas.setBackground(new java.awt.Color(255, 255, 255, 128));
         BotonRutinas.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
+        BotonRutinas.setForeground(new java.awt.Color(255, 255, 255));
         BotonRutinas.setText("Rutinas");
         BotonRutinas.setBorder(null);
+        BotonRutinas.setRolloverEnabled(false);
         BotonRutinas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonRutinasActionPerformed(evt);
@@ -96,8 +102,10 @@ public class Menu extends javax.swing.JFrame {
 
         BotonCerrar.setBackground(new java.awt.Color(255, 255, 255, 128));
         BotonCerrar.setFont(new java.awt.Font("Roboto", 3, 12)); // NOI18N
+        BotonCerrar.setForeground(new java.awt.Color(255, 255, 255));
         BotonCerrar.setText("X");
         BotonCerrar.setBorder(null);
+        BotonCerrar.setRolloverEnabled(false);
         BotonCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonCerrarActionPerformed(evt);
@@ -106,8 +114,10 @@ public class Menu extends javax.swing.JFrame {
 
         BotonVolver1.setBackground(new java.awt.Color(255, 255, 255, 128));
         BotonVolver1.setFont(new java.awt.Font("Roboto", 3, 12)); // NOI18N
+        BotonVolver1.setForeground(new java.awt.Color(255, 255, 255));
         BotonVolver1.setText("<");
         BotonVolver1.setBorder(null);
+        BotonVolver1.setRolloverEnabled(false);
         BotonVolver1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonVolver1ActionPerformed(evt);
@@ -195,7 +205,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void BotonCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCerrarActionPerformed
-        this.dispose();
+        System.exit(0);
     }//GEN-LAST:event_BotonCerrarActionPerformed
 
     private void BotonRutinasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRutinasActionPerformed

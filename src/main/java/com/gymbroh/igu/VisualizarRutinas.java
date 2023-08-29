@@ -40,7 +40,6 @@ public class VisualizarRutinas extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(1200, 800));
         setMinimumSize(new java.awt.Dimension(1200, 800));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1200, 800));
         setResizable(false);
 
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -79,8 +78,10 @@ public class VisualizarRutinas extends javax.swing.JFrame {
 
         BotonCerrar.setBackground(new java.awt.Color(255, 255, 255, 128));
         BotonCerrar.setFont(new java.awt.Font("Roboto", 3, 12)); // NOI18N
+        BotonCerrar.setForeground(new java.awt.Color(255, 255, 255));
         BotonCerrar.setText("X");
         BotonCerrar.setBorder(null);
+        BotonCerrar.setRolloverEnabled(false);
         BotonCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonCerrarActionPerformed(evt);
@@ -89,8 +90,10 @@ public class VisualizarRutinas extends javax.swing.JFrame {
 
         BotonVolver1.setBackground(new java.awt.Color(255, 255, 255, 128));
         BotonVolver1.setFont(new java.awt.Font("Roboto", 3, 12)); // NOI18N
+        BotonVolver1.setForeground(new java.awt.Color(255, 255, 255));
         BotonVolver1.setText("<");
         BotonVolver1.setBorder(null);
+        BotonVolver1.setRolloverEnabled(false);
         BotonVolver1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonVolver1ActionPerformed(evt);
@@ -98,14 +101,19 @@ public class VisualizarRutinas extends javax.swing.JFrame {
         });
 
         IngreseSuNombre.setFont(new java.awt.Font("Roboto", 3, 24)); // NOI18N
+        IngreseSuNombre.setForeground(new java.awt.Color(255, 255, 255));
         IngreseSuNombre.setText("Ingrese su nombre:");
 
+        TextNombre.setBackground(new java.awt.Color(255, 255, 255, 128));
         TextNombre.setFont(new java.awt.Font("Roboto", 3, 24)); // NOI18N
         TextNombre.setBorder(null);
 
+        BotonBuscar.setBackground(new java.awt.Color(255, 255, 255, 128));
         BotonBuscar.setFont(new java.awt.Font("Roboto", 3, 24)); // NOI18N
+        BotonBuscar.setForeground(new java.awt.Color(255, 255, 255));
         BotonBuscar.setText("Buscar");
         BotonBuscar.setBorder(null);
+        BotonBuscar.setRolloverEnabled(false);
         BotonBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonBuscarActionPerformed(evt);
@@ -170,7 +178,7 @@ public class VisualizarRutinas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCerrarActionPerformed
-        this.dispose();
+        System.exit(0);
     }//GEN-LAST:event_BotonCerrarActionPerformed
 
     private void BotonVolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVolver1ActionPerformed

@@ -47,6 +47,7 @@ public class EditarCliente extends javax.swing.JFrame {
         ComboSexo = new javax.swing.JComboBox<>();
         Sexo = new javax.swing.JLabel();
         BotonVolver = new javax.swing.JButton();
+        BotonCerrar1 = new javax.swing.JButton();
         imagenDeFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -70,6 +71,7 @@ public class EditarCliente extends javax.swing.JFrame {
         BotonEditar.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         BotonEditar.setText("Editar");
         BotonEditar.setBorder(null);
+        BotonEditar.setRolloverEnabled(false);
         BotonEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonEditarActionPerformed(evt);
@@ -139,19 +141,23 @@ public class EditarCliente extends javax.swing.JFrame {
             }
         });
 
+        BotonCerrar1.setBackground(new java.awt.Color(255, 255, 255, 128));
+        BotonCerrar1.setFont(new java.awt.Font("Roboto", 3, 12)); // NOI18N
+        BotonCerrar1.setText("X");
+        BotonCerrar1.setBorder(null);
+        BotonCerrar1.setRolloverEnabled(false);
+        BotonCerrar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonCerrar1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout cInicioDeSesionLayout = new javax.swing.GroupLayout(cInicioDeSesion);
         cInicioDeSesion.setLayout(cInicioDeSesionLayout);
         cInicioDeSesionLayout.setHorizontalGroup(
             cInicioDeSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cInicioDeSesionLayout.createSequentialGroup()
                 .addGroup(cInicioDeSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cInicioDeSesionLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(IconoPequeño, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(GymBrohh)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(cInicioDeSesionLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(CompleteLosCamposParaEditar))
@@ -168,10 +174,7 @@ public class EditarCliente extends javax.swing.JFrame {
                         .addComponent(BotonEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(cInicioDeSesionLayout.createSequentialGroup()
                         .addGap(68, 68, 68)
-                        .addComponent(TextCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-            .addGroup(cInicioDeSesionLayout.createSequentialGroup()
-                .addGroup(cInicioDeSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(TextCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(cInicioDeSesionLayout.createSequentialGroup()
                         .addGap(55, 55, 55)
                         .addComponent(TextEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -179,34 +182,45 @@ public class EditarCliente extends javax.swing.JFrame {
                         .addGap(177, 177, 177)
                         .addComponent(Email)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cInicioDeSesionLayout.createSequentialGroup()
+            .addGroup(cInicioDeSesionLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(cInicioDeSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cInicioDeSesionLayout.createSequentialGroup()
-                        .addComponent(S1, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 11, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cInicioDeSesionLayout.createSequentialGroup()
-                        .addGroup(cInicioDeSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(DateNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
-                            .addComponent(TextNombre))
-                        .addGroup(cInicioDeSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(cInicioDeSesionLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(TextApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(cInicioDeSesionLayout.createSequentialGroup()
-                                .addGap(44, 44, 44)
-                                .addComponent(ComboSexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cInicioDeSesionLayout.createSequentialGroup()
-                        .addComponent(FechaNacimiento)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Sexo)
-                        .addGap(61, 61, 61))
-                    .addGroup(cInicioDeSesionLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(cInicioDeSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cInicioDeSesionLayout.createSequentialGroup()
                         .addGroup(cInicioDeSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(S3, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(S2, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(70, 70, 70))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cInicioDeSesionLayout.createSequentialGroup()
+                                .addComponent(S1, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 11, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cInicioDeSesionLayout.createSequentialGroup()
+                                .addGroup(cInicioDeSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(DateNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
+                                    .addComponent(TextNombre))
+                                .addGroup(cInicioDeSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(cInicioDeSesionLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(TextApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(cInicioDeSesionLayout.createSequentialGroup()
+                                        .addGap(44, 44, 44)
+                                        .addComponent(ComboSexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cInicioDeSesionLayout.createSequentialGroup()
+                                .addComponent(FechaNacimiento)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Sexo)
+                                .addGap(61, 61, 61))
+                            .addGroup(cInicioDeSesionLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(cInicioDeSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(S3, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(S2, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(70, 70, 70))
+                    .addGroup(cInicioDeSesionLayout.createSequentialGroup()
+                        .addComponent(IconoPequeño, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(GymBrohh)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BotonCerrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         cInicioDeSesionLayout.setVerticalGroup(
             cInicioDeSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,7 +234,9 @@ public class EditarCliente extends javax.swing.JFrame {
                         .addComponent(GymBrohh))
                     .addGroup(cInicioDeSesionLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(BotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(cInicioDeSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BotonCerrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CompleteLosCamposParaEditar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -308,6 +324,10 @@ public class EditarCliente extends javax.swing.JFrame {
             this.dispose();
         }
     }//GEN-LAST:event_BotonEditarActionPerformed
+
+    private void BotonCerrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCerrar1ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_BotonCerrar1ActionPerformed
     
     private void editarCliente(int id) {
         this.cliente = control.traerCliente(id);
@@ -323,6 +343,7 @@ public class EditarCliente extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Apellido;
+    private javax.swing.JButton BotonCerrar1;
     private javax.swing.JButton BotonEditar;
     private javax.swing.JButton BotonVolver;
     private javax.swing.JComboBox<String> ComboSexo;

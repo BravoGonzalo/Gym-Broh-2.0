@@ -65,6 +65,7 @@ public class VisualizarClientes extends javax.swing.JPanel {
         BotonEditar.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         BotonEditar.setText("Editar");
         BotonEditar.setBorder(null);
+        BotonEditar.setRolloverEnabled(false);
         BotonEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonEditarActionPerformed(evt);
@@ -75,6 +76,7 @@ public class VisualizarClientes extends javax.swing.JPanel {
         BotonBorrar.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         BotonBorrar.setText("Borrar");
         BotonBorrar.setBorder(null);
+        BotonBorrar.setRolloverEnabled(false);
         BotonBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonBorrarActionPerformed(evt);

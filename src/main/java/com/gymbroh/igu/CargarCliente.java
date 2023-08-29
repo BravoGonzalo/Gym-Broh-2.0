@@ -61,8 +61,10 @@ public class CargarCliente extends javax.swing.JPanel {
 
         BotonRegistrarse.setBackground(new java.awt.Color(255, 255, 255, 128));
         BotonRegistrarse.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        BotonRegistrarse.setForeground(new java.awt.Color(255, 255, 255));
         BotonRegistrarse.setText("Cargar Cliente");
         BotonRegistrarse.setBorder(null);
+        BotonRegistrarse.setRolloverEnabled(false);
         BotonRegistrarse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonRegistrarseActionPerformed(evt);

@@ -10,10 +10,13 @@ E:\Gym_Broh\src\main\java\com\gymbroh\persistencia\exceptions\PreexistingEntityE
 E:\Gym_Broh\src\main\java\com\gymbroh\igu\VisualizarClientes.java
 E:\Gym_Broh\src\main\java\com\gymbroh\logica\Cliente.java
 E:\Gym_Broh\src\main\java\com\gymbroh\igu\CargarCliente.java
+E:\Gym_Broh\src\main\java\com\gymbroh\igu\CrearRutina.java
 E:\Gym_Broh\src\main\java\com\gymbroh\persistencia\exceptions\IllegalOrphanException.java
 E:\Gym_Broh\src\main\java\com\gymbroh\persistencia\EntrenadorJpaController.java
 E:\Gym_Broh\src\main\java\com\gymbroh\logica\Ejercicio.java
 E:\Gym_Broh\src\main\java\com\gymbroh\logica\Rutina.java
+E:\Gym_Broh\src\main\java\com\gymbroh\igu\Rutinas.java
+E:\Gym_Broh\src\main\java\com\gymbroh\igu\VisualizarRutinas.java
 E:\Gym_Broh\src\main\java\com\gymbroh\logica\Entrenador.java
 E:\Gym_Broh\src\main\java\com\gymbroh\logica\Controladora.java
 E:\Gym_Broh\src\main\java\com\gymbroh\persistencia\exceptions\NonexistentEntityException.java

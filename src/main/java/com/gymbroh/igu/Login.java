@@ -8,7 +8,9 @@ import com.gymbroh.logica.Entrenador;
  * @author Gonzalo Bravo
  */
 public class Login extends javax.swing.JFrame {
+
     private Controladora control = null;
+
     public Login() {
         control = new Controladora();
         initComponents();
@@ -85,8 +87,10 @@ public class Login extends javax.swing.JFrame {
 
         BotonIngresar.setBackground(new java.awt.Color(255, 255, 255, 128));
         BotonIngresar.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        BotonIngresar.setForeground(new java.awt.Color(255, 255, 255));
         BotonIngresar.setText("Ingresar");
         BotonIngresar.setBorder(null);
+        BotonIngresar.setRolloverEnabled(false);
         BotonIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonIngresarActionPerformed(evt);
@@ -95,8 +99,10 @@ public class Login extends javax.swing.JFrame {
 
         BotonRegistrarse.setBackground(new java.awt.Color(255, 255, 255, 128));
         BotonRegistrarse.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        BotonRegistrarse.setForeground(new java.awt.Color(255, 255, 255));
         BotonRegistrarse.setText("Registrarse");
         BotonRegistrarse.setBorder(null);
+        BotonRegistrarse.setRolloverEnabled(false);
         BotonRegistrarse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonRegistrarseActionPerformed(evt);
@@ -109,8 +115,10 @@ public class Login extends javax.swing.JFrame {
 
         BotonVolver.setBackground(new java.awt.Color(255, 255, 255, 128));
         BotonVolver.setFont(new java.awt.Font("Roboto", 3, 12)); // NOI18N
+        BotonVolver.setForeground(new java.awt.Color(255, 255, 255));
         BotonVolver.setText("X");
         BotonVolver.setBorder(null);
+        BotonVolver.setRolloverEnabled(false);
         BotonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonVolverActionPerformed(evt);
@@ -119,8 +127,10 @@ public class Login extends javax.swing.JFrame {
 
         BotonVerRutina.setBackground(new java.awt.Color(255, 255, 255, 128));
         BotonVerRutina.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        BotonVerRutina.setForeground(new java.awt.Color(255, 255, 255));
         BotonVerRutina.setText("Ve tu rutina");
         BotonVerRutina.setBorder(null);
+        BotonVerRutina.setRolloverEnabled(false);
         BotonVerRutina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonVerRutinaActionPerformed(evt);
@@ -253,7 +263,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonRegistrarseActionPerformed
 
     private void BotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVolverActionPerformed
-        this.dispose();
+        System.exit(0);
     }//GEN-LAST:event_BotonVolverActionPerformed
 
     private void BotonVerRutinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVerRutinaActionPerformed
@@ -266,18 +276,18 @@ public class Login extends javax.swing.JFrame {
     private void BotonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonIngresarActionPerformed
         String email = TextEmail.getText();
         char[] var = TextContraseña.getPassword();
-        String contra = new String (var);
+        String contra = new String(var);
         control.verificarEntrenador(email, contra, this);
     }//GEN-LAST:event_BotonIngresarActionPerformed
 
-    public void mostrarVentana(Entrenador entrenador){
+    public void mostrarVentana(Entrenador entrenador) {
         Menu menu = new Menu();
         menu.setVisible(true);
         menu.setLocationRelativeTo(null);
         this.dispose();
     }
 
-    public void disposeVentana(){
+    public void disposeVentana() {
         this.dispose();
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
