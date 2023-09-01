@@ -1,4 +1,3 @@
-
 package com.gymbroh.igu;
 
 import com.gymbroh.logica.Controladora;
@@ -15,6 +14,7 @@ import javax.swing.table.DefaultTableModel;
 public class VisualizarRutinas extends javax.swing.JFrame {
 
     private Controladora control = null;
+
     public VisualizarRutinas() {
         control = new Controladora();
         initComponents();
@@ -102,7 +102,7 @@ public class VisualizarRutinas extends javax.swing.JFrame {
 
         IngreseSuNombre.setFont(new java.awt.Font("Roboto", 3, 24)); // NOI18N
         IngreseSuNombre.setForeground(new java.awt.Color(255, 255, 255));
-        IngreseSuNombre.setText("Ingrese su nombre:");
+        IngreseSuNombre.setText("Ingrese su nombre y apellido:");
 
         TextNombre.setBackground(new java.awt.Color(255, 255, 255, 128));
         TextNombre.setFont(new java.awt.Font("Roboto", 3, 24)); // NOI18N
@@ -131,7 +131,7 @@ public class VisualizarRutinas extends javax.swing.JFrame {
                 .addComponent(TextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(BotonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 319, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 212, Short.MAX_VALUE)
                 .addComponent(BotonVolver1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BotonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -190,15 +190,23 @@ public class VisualizarRutinas extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonVolver1ActionPerformed
 
     private void BotonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBuscarActionPerformed
-        String nombre = TextNombre.getText();
-        if(!nombre.isEmpty()){
-            List<Rutina> rutinaCliente = control.traerRutinaPorNombre(nombre);
-            if(rutinaCliente != null){
-                cargarTabla(rutinaCliente);
-            }else{
-                JOptionPane.showMessageDialog(null, "No se encontró rutina de " + nombre);
+        String nombreCompleto = TextNombre.getText();
+        if (!nombreCompleto.isEmpty()) {
+            String[] partes = nombreCompleto.split(" ");
+            if (partes.length >= 2) {
+                String nombre = partes[0];
+                String apellido = partes[1];
+
+                List<Rutina> rutinaCliente = control.traerRutinaPorNombreyApellido(nombre, apellido);
+                if (rutinaCliente != null) {
+                    cargarTabla(rutinaCliente);
+                } else {
+                    JOptionPane.showMessageDialog(null, "No se encontró rutina de " + nombre);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Ingrese tanto el nombre como el apellido del cliente para buscar su rutina.");
             }
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Ingrese el nombre del cliente para buscar su rutina.");
         }
     }//GEN-LAST:event_BotonBuscarActionPerformed

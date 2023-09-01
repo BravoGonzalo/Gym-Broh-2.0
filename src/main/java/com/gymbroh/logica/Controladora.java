@@ -124,12 +124,13 @@ public class Controladora {
         }
     }
 
-    public List<Rutina> traerRutinaPorNombre(String nombre) {
+    public List<Rutina> traerRutinaPorNombreyApellido(String nombre, String apellido) {
         EntityManager em = rutinaJpa.getEntityManager();
         try {
-            String jpql = "SELECT r FROM Rutina r WHERE r.cliente.nombre = :nombre";
+            String jpql = "SELECT r FROM Rutina r WHERE r.cliente.nombre = :nombre AND r.cliente.apellido = :apellido";
             TypedQuery<Rutina> query = em.createQuery(jpql, Rutina.class);
             query.setParameter("nombre", nombre);
+            query.setParameter("apellido", apellido);
 
             return query.getResultList();
         } finally {

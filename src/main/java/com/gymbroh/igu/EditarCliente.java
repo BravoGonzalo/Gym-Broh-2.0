@@ -52,6 +52,8 @@ public class EditarCliente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(897, 500));
+        setUndecorated(true);
+        setResizable(false);
 
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -69,6 +71,7 @@ public class EditarCliente extends javax.swing.JFrame {
 
         BotonEditar.setBackground(new java.awt.Color(255, 255, 255, 128));
         BotonEditar.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        BotonEditar.setForeground(new java.awt.Color(255, 255, 255));
         BotonEditar.setText("Editar");
         BotonEditar.setBorder(null);
         BotonEditar.setRolloverEnabled(false);
@@ -84,9 +87,11 @@ public class EditarCliente extends javax.swing.JFrame {
 
         TextNombre.setBackground(new java.awt.Color(255, 255, 255, 128));
         TextNombre.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        TextNombre.setForeground(new java.awt.Color(0, 0, 0));
         TextNombre.setBorder(null);
 
         DateNacimiento.setBackground(new java.awt.Color(255, 255, 255, 128));
+        DateNacimiento.setForeground(new java.awt.Color(0, 0, 0));
         DateNacimiento.setToolTipText("");
 
         Apellido.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
@@ -99,6 +104,7 @@ public class EditarCliente extends javax.swing.JFrame {
 
         TextApellido.setBackground(new java.awt.Color(255, 255, 255, 128));
         TextApellido.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        TextApellido.setForeground(new java.awt.Color(0, 0, 0));
         TextApellido.setBorder(null);
 
         Tel.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
@@ -107,10 +113,12 @@ public class EditarCliente extends javax.swing.JFrame {
 
         TextEmail.setBackground(new java.awt.Color(255, 255, 255, 128));
         TextEmail.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        TextEmail.setForeground(new java.awt.Color(0, 0, 0));
         TextEmail.setBorder(null);
 
         TextCelular.setBackground(new java.awt.Color(255, 255, 255, 128));
         TextCelular.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        TextCelular.setForeground(new java.awt.Color(0, 0, 0));
         TextCelular.setBorder(null);
         TextCelular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,6 +132,7 @@ public class EditarCliente extends javax.swing.JFrame {
 
         ComboSexo.setBackground(new java.awt.Color(255, 255, 255, 128));
         ComboSexo.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        ComboSexo.setForeground(new java.awt.Color(0, 0, 0));
         ComboSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "*", "Masculino", "Femenino", " " }));
         ComboSexo.setBorder(null);
 
@@ -133,6 +142,7 @@ public class EditarCliente extends javax.swing.JFrame {
 
         BotonVolver.setBackground(new java.awt.Color(255, 255, 255, 128));
         BotonVolver.setFont(new java.awt.Font("Roboto", 3, 12)); // NOI18N
+        BotonVolver.setForeground(new java.awt.Color(255, 255, 255));
         BotonVolver.setText("<");
         BotonVolver.setBorder(null);
         BotonVolver.addActionListener(new java.awt.event.ActionListener() {
@@ -143,6 +153,7 @@ public class EditarCliente extends javax.swing.JFrame {
 
         BotonCerrar1.setBackground(new java.awt.Color(255, 255, 255, 128));
         BotonCerrar1.setFont(new java.awt.Font("Roboto", 3, 12)); // NOI18N
+        BotonCerrar1.setForeground(new java.awt.Color(255, 255, 255));
         BotonCerrar1.setText("X");
         BotonCerrar1.setBorder(null);
         BotonCerrar1.setRolloverEnabled(false);
@@ -340,6 +351,8 @@ public class EditarCliente extends javax.swing.JFrame {
         } else if (cliente.getSexo().equals("Femenino")) {
             ComboSexo.setSelectedIndex(2);
         }
+        TextCelular.setText(cliente.getTel());
+        TextEmail.setText(cliente.getEmail());
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Apellido;

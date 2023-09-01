@@ -60,6 +60,7 @@ public class Login extends javax.swing.JFrame {
 
         TextEmail.setBackground(new java.awt.Color(255, 255, 255, 128));
         TextEmail.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        TextEmail.setForeground(new java.awt.Color(0, 0, 0));
         TextEmail.setBorder(null);
         TextEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,6 +74,7 @@ public class Login extends javax.swing.JFrame {
 
         TextContraseña.setBackground(new java.awt.Color(255, 255, 255, 128));
         TextContraseña.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        TextContraseña.setForeground(new java.awt.Color(0, 0, 0));
         TextContraseña.setBorder(null);
 
         NoTienesCuenta.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
